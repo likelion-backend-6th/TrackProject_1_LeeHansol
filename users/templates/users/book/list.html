@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}My Rentals{% endblock title %}
+{% block content %}
+    <h1>My Rentals</h1>
+    <div class="module">
+        {% for item in object_list %}
+            <div class="course-info">
+                <h3>{{ item.title }}</h3>
+            </div>
+            {% empty %}
+                <p>
+                대여한 책이 없습니다.
+                    <a href="{% url "book_list" %}">책 둘러보기</a>
+                </p>
+        {% endfor %}
+    </div>
+{% endblock content %}
