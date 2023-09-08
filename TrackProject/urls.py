@@ -29,6 +29,7 @@ urlpatterns = [
     # path('books/', include('books.urls')),
     path('users/', include('users.urls')),
     path('', include('books.urls'), name='book_list'),
+    path('api/', include('books.api.urls', namespace='api')),
 
 ]
 
