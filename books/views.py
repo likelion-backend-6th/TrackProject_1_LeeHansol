@@ -15,11 +15,11 @@ class ManageBookListView(ListView):
     template_name = 'books/manage/list.html'
 
 
-# class BookDetailView(DetailView):
-#     model = Item
-#     template_name = 'books/book/detail.html'
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['rental_form'] = BookRentalForm(initial={'item': self.object})
-#         return context
+class BookDetailView(DetailView):
+    model = Item
+    template_name = 'books/book/detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['rental_form'] = BookRentalForm(initial={'item': self.object})
+        return context

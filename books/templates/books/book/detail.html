@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}
+    {{ item.title }}
+{% endblock title %}
+{% block content %}
+    <div class="product-detail">
+        <h1>{{ item.title }}</h1>
+        <p class="description">${{ title.description }}</p>
+        <form action="{% url "user_book_rental" item.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="{% trans "rent" %}">
+        </form>
+        {{ item.description|linebreaks }}
+    </div>
+{% endblock content %}
